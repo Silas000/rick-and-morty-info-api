@@ -1,0 +1,297 @@
+body {
+    background: linear-gradient(135deg, #f0e14a, #97ce4c, #e89ac7);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    min-height: 100vh;
+    padding-top: 20px;                               
+    margin: 0;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rick-morty-header {
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.rick-morty-header h1 {
+    font-family: 'Schwifty', sans-serif; 
+    margin-bottom: 15px;
+    color: #44281d; /* Marrom escuro para contraste */
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.2); /* Branco transparente */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(240, 225, 74, 0.5); /* Amarelo vivo */
+}
+
+.input-group {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-control, .btn {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #f0e14a, #97ce4c); /* Amarelo vivo para Verde limão */
+    border: none;
+    transition: all 0.3s ease;
+    padding: 12px 25px;
+    font-weight: bold;
+    color: #44281d; /* Texto marrom escuro */
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #97ce4c, #e89ac7); /* Verde limão para Rosa claro */
+}
+
+/* Card menor e mais elegante */
+#characterCard {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 2px solid #97ce4c; /* Verde limão */
+    max-width: 400px;
+    margin: 0 auto 30px;
+    display: none;
+    animation: slideIn 0.6s ease-out;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+#characterCard img{
+    border-radius: 30px;
+}
+#characterCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #97ce4c;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+     font-family: 'Schwifty', sans-serif; 
+    color: #44281d; /* Marrom escuro */
+    font-weight: bold;
+    border-bottom: 3px solid #f0e14a; /* Amarelo vivo */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+.character-info{
+    padding: 20px;
+}
+.character-info p {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.character-info i {
+    margin-right: 10px;
+    color: #e89ac7; /* Rosa claro */
+    width: 20px;
+    text-align: center;
+}
+
+.character-info strong {
+    color: #44281d; /* Marrom escuro */
+    min-width: 90px;
+    font-weight: 600;
+}
+.character-info p span{
+    margin-left: 10px;
+}
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.status-vivo { background-color: #d4edda; color: #155724; }
+.status-morto { background-color: #f8d7da; color: #721c24; }
+.status-desconhecido { background-color: #fff3cd; color: #856404; }
+
+#loadingSpinner {
+    display: none;
+    text-align: center;
+    color: #44281d; /* Marrom escuro */
+    margin: 30px 0;
+}
+
+#loadingSpinner p {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.spinner-border {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-width: 0.3em;
+    border-color: #f0e14a; /* Amarelo vivo */
+    border-right-color: transparent;
+}
+
+#errorMessage {
+    background: rgba(232, 154, 199, 0.95); /* Rosa claro */
+    color: #44281d; /* Marrom escuro */
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.1em;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+#errorMessage i {
+    margin-right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    
+    .rick-morty-header h1 {
+        font-size: 2rem;
+    }
+    
+    #characterCard {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .card-img-top {
+        height: 250px;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.5em;
+    }
+    
+    .search-container {
+        padding: 15px;
+    }
+    
+    .form-control, .btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
+#searchButton{
+    border:none;
+}
+/* Botão para Todos os Personagens */
+.btn-all-characters {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #f0e14a, #97ce4c);
+    color: #44281d;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 225, 74, 0.5);
+}
+
+.btn-all-characters:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #97ce4c, #e89ac7);
+}
+
+.btn-all-characters:active {
+    transform: translateY(0);
+}
+
+.btn-all-characters i {
+    margin-right: 8px;
+}
+
+/* Ajustes responsivos para o botão */
+@media (max-width: 768px) {
+    .btn-all-characters {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}

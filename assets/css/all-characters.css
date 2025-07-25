@@ -1,0 +1,274 @@
+body {
+  background: linear-gradient(135deg, #97ce4c, #e0ffb3);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.character-img {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(240, 225, 74, 0.5);
+}
+
+.header-section h1 {
+    color: #44281d;
+    font-family: 'Schwifty', cursive;
+    margin-bottom: 15px;
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 20px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(240, 225, 74, 0.5);
+}
+
+.input-group {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-control, .btn {
+    border: none;
+    border-radius: 25px !important;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #f0e14a, #97ce4c);
+    border: none;
+    transition: all 0.3s ease;
+    color: #44281d;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #97ce4c, #e89ac7);
+}
+/* Botão para voltar à página inicial - adicione no final do arquivo */
+.btn-back-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #f0e14a, #97ce4c);
+    color: #44281d;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(240, 225, 74, 0.5);
+}
+
+.btn-back-to-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(45deg, #97ce4c, #e89ac7);
+}
+
+.btn-back-to-home:active {
+    transform: translateY(0);
+}
+
+.btn-back-to-home i {
+    margin-right: 8px;
+}
+
+/* Ajustes responsivos para o botão */
+@media (max-width: 768px) {
+    .btn-back-to-home {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+/* Character Card - atualizado */
+.character-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid #97ce4c;
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+    text-align: center; /* Centraliza todo o conteúdo do card */
+}
+
+.character-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.character-image {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #97ce4c;
+    transition: transform 0.3s ease;
+    padding: 10px; /* Adiciona padding conforme solicitado */
+    border-radius: 10px; /* Arredonda as bordas da imagem */
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.05);
+}
+
+.character-card-body {
+    padding: 20px;
+}
+
+.character-name {
+    color: #44281d;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #f0e14a;
+    padding-bottom: 10px;
+}
+
+.character-info {
+    text-align: left; /* Mantém as informações alinhadas à esquerda */
+    display: inline-block; /* Permite centralização do bloco de informações */
+    width: 100%;
+}
+
+.character-info-item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.character-info-item i {
+    margin-right: 8px;
+    color: #e89ac7;
+    width: 18px;
+    text-align: center;
+}
+
+.character-info-item strong {
+    color: #44281d;
+    min-width: 60px;
+    font-weight: 600;
+}
+
+.status-badge {
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.status-vivo { background-color: #d4edda; color: #155724; }
+.status-morto { background-color: #f8d7da; color: #721c24; }
+.status-desconhecido { background-color: #fff3cd; color: #856404; }
+#loadingSpinner {
+    color: #44281d;
+}
+
+#loadingSpinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3em;
+    border-color: #f0e14a;
+    border-right-color: transparent;
+}
+
+#noResultsMessage {
+    color: #44281d;
+}
+
+.btn-back-to-top {
+    position: fixed;
+    bottom: 105px;
+    right: 30px;
+    background: linear-gradient(45deg, #f0e14a, #97ce4c);
+    color: #44281d;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.btn-back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-section {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    
+    .search-container {
+        margin: 0 10px 20px;
+        padding: 15px;
+    }
+    
+    .character-image {
+        height: 150px;
+    }
+    
+    .btn-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
